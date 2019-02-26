@@ -42,7 +42,7 @@ class FieldTypeValidator implements FieldTypeValidatorContract
         switch ($field->type) {
             case FieldsManager::TYPE_BOOLEAN:
                 {
-                    return in_array($value, [true, false, 0, 1, '0', '1']);
+                    return is_bool($value) || in_array($value, [0, 1, '0', '1']);
                 }
             case FieldsManager::TYPE_DATE:
                 {
