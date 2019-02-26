@@ -4,6 +4,7 @@ namespace App\Components\Subscribers;
 
 use App\Components\Subscribers\Contracts\FieldsManagerContract;
 use App\Components\Subscribers\Contracts\FieldsRepositoryContract;
+use App\Components\Subscribers\Contracts\FieldTypeValidatorContract;
 use App\Components\Subscribers\Contracts\SubscriberRepositoryContract;
 use App\Components\Subscribers\Contracts\SubscribersManagerContract;
 use App\Components\Subscribers\Repositories\FieldsRepository;
@@ -62,6 +63,11 @@ class SubscribersServiceProvider extends ServiceProvider
         $this->app->bind(
             FieldsManagerContract::class,
             FieldsManager::class
+        );
+
+        $this->app->bind(
+            FieldTypeValidatorContract::class,
+            FieldTypeValidator::class
         );
     }
 }

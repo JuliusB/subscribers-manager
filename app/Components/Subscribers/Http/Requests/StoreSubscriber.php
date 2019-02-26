@@ -3,6 +3,7 @@
 namespace App\Components\Subscribers\Http\Requests;
 
 use App\Components\Subscribers\Http\Rules\HostDomainActive;
+use App\Components\Subscribers\Http\Rules\ValidFieldType;
 use App\Components\Subscribers\SubscribersManager;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -31,7 +32,7 @@ class StoreSubscriber extends FormRequest
             'name' => 'required',
             'state' => [Rule::in(SubscribersManager::STATES)],
             'fields.*.id' => 'exists:fields|required_with:fields.*.value',
-            'fields.*.value' => 'filled',
+            'fields.*.value' => ['filled', $this->app->make(ValidFieldType::class)],
         ];
     }
 }
