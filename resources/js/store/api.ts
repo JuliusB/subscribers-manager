@@ -9,7 +9,7 @@ import {
 } from "./modules/dataModels";
 
 export const Api = axios.create({
-    baseURL: 'http://playground.mail/api'
+    baseURL: '/api'
 });
 
 export async function getSubscribers(page: number): Promise<SubscribersListResponse> {
