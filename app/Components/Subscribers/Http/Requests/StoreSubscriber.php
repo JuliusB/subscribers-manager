@@ -32,7 +32,7 @@ class StoreSubscriber extends FormRequest
             'name' => 'required',
             'state' => [Rule::in(SubscribersManager::STATES)],
             'fields.*.id' => 'exists:fields|required_with:fields.*.value',
-            'fields.*.value' => ['filled', $this->app->make(ValidFieldType::class)],
+            'fields.*.value' => ['filled', app()->make(ValidFieldType::class)],
         ];
     }
 }
