@@ -13,3 +13,5 @@ After cloning this repository, got to root directory and run following commands:
 - php artisan serve
 
 Then open http://127.0.0.1:8000 in browser.
+
+run teststs with command: vendor/bin/phpunit
