@@ -47,9 +47,11 @@ class ValidFieldType implements Rule
         $fields = $this->request->get('fields');
 
         foreach ($fields as $field) {
-            if(!$this->validator->validate($field['id'], $field['value'])) {
-                return false;
-            };
+            if (array_key_exists('value', $field)) {
+                if(!$this->validator->validate($field['id'], $field['value'])) {
+                    return false;
+                };
+            }
         }
 
         return true;
