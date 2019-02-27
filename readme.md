@@ -14,4 +14,4 @@ After cloning this repository, got to root directory and run following commands:
 
 Then open http://127.0.0.1:8000 in browser.
 
-run teststs with command: vendor/bin/phpunit
+run tests with command: vendor/bin/phpunit
